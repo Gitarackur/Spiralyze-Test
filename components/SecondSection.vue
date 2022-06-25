@@ -1,12 +1,6 @@
 <template>
   <div class="px-4 md:px-6 lg:px-32 md:py-16">
-    <div>
-      <div class="buttons">
-        <button :disabled="slides <= 2" @click="removeSlide">
-          Remove Slide
-        </button>
-        <button :disabled="slides >= 10" @click="addSlide">Add Slide</button>
-      </div>
+    <div class="relative">
       <div class="slides">
         <transition-group
           name="slide"
@@ -71,16 +65,42 @@
           </div>
         </transition-group>
       </div>
+
       <span class="prev" @click="move(-1)">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        <svg
+          width="25"
+          height="40"
+          viewBox="0 0 25 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24.24 35.76L8.47999 20L24.24 4.24L20 -3.70673e-07L-7.78829e-06 20L20 40L24.24 35.76Z"
+            fill="#EAEAEA"
+          />
+        </svg>
       </span>
+
       <span class="next" @click="move(1)">
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <svg
+          width="25"
+          height="40"
+          viewBox="0 0 25 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.76001 4.24L16.52 20L0.76001 35.76L5.00001 40L25 20L5.00001 0L0.76001 4.24Z"
+            fill="#EAEAEA"
+          />
+        </svg>
       </span>
-      <ul class="dots">
+
+      <ul class="dots mt-14 lg:-mx-6">
         <li
           v-for="(dot, index) in slides"
           :key="index"
+          class="mx-3 lg:mx-6"
           :class="{ active: ++index === active }"
           @click="jump(index)"
         ></li>
@@ -95,7 +115,7 @@ export default {
   components: {},
   data() {
     return {
-      slides: 5,
+      slides: 3,
       active: 1,
     }
   },
@@ -121,7 +141,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$primary: #221e21;
+$primary: #5bc8af;
 
 .bg-\#F5F5F5 {
   background: #f5f5f5;
@@ -135,14 +155,14 @@ $primary: #221e21;
   border-radius: 0px 8px 8px 0px;
 }
 
+/* slideshow */
+
 .prev,
 .next {
   position: absolute;
-  top: 50%;
+  top: 40%;
   width: 50px;
   height: 50px;
-  border: 2px solid $primary;
-  color: $primary;
   border-radius: 50%;
   margin-top: -25px;
   margin-left: 25px;
@@ -153,51 +173,56 @@ $primary: #221e21;
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &:hover {
-    background: $primary;
-    color: #fff;
     transform: scale(1.2);
+    svg {
+      path {
+        fill: #5bc8af;
+        color: #5bc8af;
+      }
+    }
   }
 
   &:active {
     transform: translate(0, 3px) scale(1.2);
+    svg {
+      fill: #5bc8af;
+      color: #5bc8af;
+    }
   }
 }
 
 .next {
   right: 0;
-  margin-left: auto;
-  margin-right: 25px;
+  // margin-left: auto;
+  // margin-right: 25px;
   text-indent: 2px;
 }
 
 .dots {
-  position: fixed;
   display: block;
   width: 100%;
   text-align: center;
-  bottom: 20px;
 
   li {
-    width: 6px;
-    height: 6px;
-    border-radius: 3px;
-    background: $primary;
-    opacity: 0.2;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #eaeaea;
+    opacity: 1;
     display: inline-block;
-    margin: 0 3px;
     cursor: pointer;
     transition: opacity 0.4s ease-in-out,
       width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     &.active {
-      width: 22px;
-      opacity: 1;
+      background: $primary;
+      // width: 22px;
+      // opacity: 1;
     }
   }
 }
 
 .slides {
-  font-size: 40px;
   display: flex;
   height: 100%;
   align-items: center;
@@ -205,11 +230,9 @@ $primary: #221e21;
   font-weight: bold;
 
   @media (min-width: 600px) {
-    font-size: 80px;
   }
 
   @media (min-width: 900px) {
-    font-size: 140px;
   }
 
   .animated {
@@ -234,29 +257,6 @@ $primary: #221e21;
   .slide-out-active {
     opacity: 0;
     transform: translate(-60%, -50%);
-  }
-}
-
-.buttons {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-button {
-  padding: 10px;
-  outline: none;
-  border: none;
-  -webkit-appearance: none;
-  background: $primary;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  cursor: pointer;
-
-  &:disabled {
-    opacity: 0.2;
-    cursor: no-drop;
   }
 }
 </style>
