@@ -230,40 +230,6 @@
                   </button>
                 </div>
               </div>
-
-              <div v-if="validateResult !== null" class="containers">
-                <article
-                  v-if="validateResult === true"
-                  class="message is-success"
-                >
-                  <div class="message-header">
-                    <p>Success</p>
-                    <button
-                      class="delete"
-                      aria-label="delete"
-                      @click="validateResult = null"
-                    ></button>
-                  </div>
-                  <div class="message-body">Form input is correct</div>
-                </article>
-                <article v-else class="message is-danger">
-                  <div class="message-header">
-                    <p>Error</p>
-                    <button
-                      class="delete"
-                      aria-label="delete"
-                      @click="validateResult = null"
-                    ></button>
-                  </div>
-                  <div class="message-body">
-                    {{
-                      validateResult &&
-                      validateResult[0] &&
-                      validateResult[0].message
-                    }}
-                  </div>
-                </article>
-              </div>
             </div>
           </div>
         </div>
