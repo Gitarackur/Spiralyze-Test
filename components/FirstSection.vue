@@ -38,9 +38,8 @@
     </div>
 
     <div class="py-8">
-      <h3 class="">
-        <span class="title-transparent-black">WE</span>
-        UNDERSTAND
+      <h3 class="title-2">
+        <span class="title-transparent-black">WE</span> &nbsp; UNDERSTAND
       </h3>
     </div>
 

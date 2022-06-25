@@ -1,6 +1,6 @@
 <template>
   <div class="px-4 md:px-6 lg:px-32 md:py-16">
-    <div class="md:flex lg:items-center lg:justify-center">
+    <div class="md:flex lg:items-stretch lg:justify-center">
       <div class="md:w-full md:flex md:items-stretch md:mx-4 md:h-full">
         <div class="md:flex lg:justify-end md:w-4/12 md:px-4 md:h-full">
           <div class="md:w-full lg:w-10/12">
@@ -34,7 +34,7 @@
               </div>
             </div>
 
-            <p class="italic">
+            <p class="italic big-p-quote">
               I have been caring for my mom & dad off and on for about 10 years
               now, and I know the importance of me being there for appointments.
               Older people need attention, love and care that they truly
@@ -50,6 +50,8 @@
 <script>
 export default {
   name: 'SecondSection',
+  components: {},
+  methods: {},
 }
 </script>
 

@@ -125,6 +125,8 @@
         <div class="px-4">
           <nuxt-link class="navlinks" to="/2">CONTACT</nuxt-link>
         </div>
+
+        <div class="px-4 navlinks">|</div>
       </div>
     </div>
 

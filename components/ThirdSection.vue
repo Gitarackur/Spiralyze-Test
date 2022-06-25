@@ -1,9 +1,9 @@
 <template>
   <div class="px-4 md:px-6 lg:px-32 md:pt-16 md:pb-32">
     <div class="mt-20 mb-8 lg:mt-0 lg:mb-0 lg:py-8">
-      <h3 class="">
-        <span class="title-transparent-black">WE</span>
-        CAN ORGANIZE EVERYTHING
+      <h3 class="title-2">
+        <span class="title-transparent-black">WE</span>&nbsp; CAN ORGANIZE
+        EVERYTHING
       </h3>
     </div>
 
@@ -49,15 +49,23 @@
       </div>
     </div>
 
-    <div class="md:py-5">
+    <div class="md:py-9">
       <div class="md:flex md:flex-wrap md:-mx-5 my-2 md:-my-5">
         <div
-          v-for="(q, i) in 6"
+          v-for="(q, i) in cards"
           :key="i"
-          class="md:w-6/12 lg:w-4/12 py-2 md:px-5 md:py-5"
+          class="relative md:w-6/12 lg:w-4/12 py-2 md:px-5 md:py-5"
         >
           <div class="outline-card p-9">
-            <p class="">Needs Assessment</p>
+            <p class="big-p-18 text-center">{{ q.title }}</p>
+          </div>
+
+          <div class="absolute flex items-center justify-center">
+            <div class="w-9/12 outline-card-details">
+              <div class="mt-3 text-xs tooltip-green px-4 py-3">
+                <p class="c-white">{{ q.value }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -68,6 +76,42 @@
 <script>
 export default {
   name: 'ThirdSection',
+  data() {
+    return {
+      cards: [
+        {
+          title: 'Needs Assessment',
+          value:
+            'We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.',
+        },
+        {
+          title: 'Treatment Planning & Placement',
+          value:
+            'We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.',
+        },
+        {
+          title: 'Transportation & Logistics',
+          value:
+            'We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.',
+        },
+        {
+          title: 'Insurance Advocacy',
+          value:
+            'We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.',
+        },
+        {
+          title: 'Employment Advocacy',
+          value:
+            'We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.',
+        },
+        {
+          title: 'Aftercare Planning',
+          value:
+            'We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.',
+        },
+      ],
+    }
+  },
 }
 </script>
 
@@ -84,11 +128,27 @@ export default {
   font-weight: 700;
   font-size: 18px;
   line-height: 28px;
-  /* or 156% */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* text-align: center; */
+  cursor: pointer;
+}
+.outline-card p {
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #333333;
+}
+
+.outline-card-details {
+  opacity: 0;
+  transition: all 0.05s;
+}
+
+.outline-card:hover + div > .outline-card-details {
+  opacity: 1;
 }
 
 .p-italic {
