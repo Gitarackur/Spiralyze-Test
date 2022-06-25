@@ -10,9 +10,8 @@
           enter-active-class="animated slide-in-active"
           leave-active-class="animated slide-out-active"
         >
-          <div v-for="index in slides" :key="index">
-            <div v-if="index == active" class="">
-              <!-- Slide {{ index }} -->
+          <div v-for="(slide, i) in slides" :key="slide.idx">
+            <div v-if="i + 1 == active" class="">
               <div class="md:flex lg:items-stretch lg:justify-center">
                 <div
                   class="md:w-full md:flex md:items-stretch md:mx-4 md:h-full"
@@ -22,7 +21,7 @@
                   >
                     <div class="md:w-full lg:w-10/12">
                       <img
-                        src="~~/static/images/review.png"
+                        :src="slide.image"
                         class="w-full md:w-full md:h-full border-8px"
                       />
                     </div>
@@ -33,7 +32,10 @@
                       class="lg:w-11/12 px-8 lg:px-16 py-16 md:py-14 bg-#194D44 c-white"
                     >
                       <div class="flex items-end justify-between mb-4">
-                        <h3 class="sub-heading-2 md:mb-4">Abbie Harvey</h3>
+                        <h3 class="sub-heading-2 md:mb-4">
+                          <!-- Abbie Harvey -->
+                          {{ slide.name }}
+                        </h3>
 
                         <div>
                           <svg
@@ -52,10 +54,11 @@
                       </div>
 
                       <p class="italic big-p-quote">
-                        I have been caring for my mom & dad off and on for about
+                        <!-- I have been caring for my mom & dad off and on for about
                         10 years now, and I know the importance of me being
                         there for appointments. Older people need attention,
-                        love and care that they truly deserve.
+                        love and care that they truly deserve. -->
+                        {{ slide.content }}
                       </p>
                     </div>
                   </div>
@@ -115,7 +118,29 @@ export default {
   components: {},
   data() {
     return {
-      slides: 3,
+      slides: [
+        {
+          idx: 1,
+          name: 'Abbie Harvey',
+          content:
+            'I have been caring for my mom & dad off and on for about 10 years now, and I know the importance of me being there for appointments. Older people need attention, love and care that they truly deserve.',
+          image: './images/review.png',
+        },
+        {
+          idx: 2,
+          name: 'John Doe',
+          content:
+            'I have been caring for my mom & dad off and on for about 10 years now, and I know the importance of me being there for appointments. Older people need attention, love and care that they truly deserve.',
+          image: './images/review-3.png',
+        },
+        {
+          idx: 3,
+          name: 'Annie Abiot',
+          content:
+            'I have been caring for my mom & dad off and on for about 10 years now, and I know the importance of me being there for appointments. Older people need attention, love and care that they truly deserve.',
+          image: './images/review-2.png',
+        },
+      ],
       active: 1,
     }
   },
