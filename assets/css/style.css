@@ -148,6 +148,12 @@ h6 {
   -webkit-text-stroke-color: white;
   color: transparent;
 }
+.title-transparent-black{
+  color: #fff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #333333;
+  color: transparent;
+}
 
 .sub-heading-1 {
   font-family: 'Montserrat-Bold', sans-serif;
@@ -435,7 +441,6 @@ h6 {
   width: 22px;
   height: 8px;
   border: 10px solid transparent;
-  /* border-top: 10px solid #ff7777; */
   border-bottom: 12px solid #ff7777;
   background: transparent;
 }

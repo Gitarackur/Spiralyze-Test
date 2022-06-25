@@ -1,7 +1,10 @@
 <template>
   <div class="px-4 md:px-6 lg:px-32 md:pt-16 md:pb-32">
     <div class="mt-20 mb-8 lg:mt-0 lg:mb-0 lg:py-8">
-      <h3>WE CAN ORGANIZE EVERYTHING</h3>
+      <h3 class="">
+        <span class="title-transparent-black">WE</span>
+        CAN ORGANIZE EVERYTHING
+      </h3>
     </div>
 
     <div class="md:flex md:flex-wrap md:-mx-5 md:mb-14 lg:mb-0">

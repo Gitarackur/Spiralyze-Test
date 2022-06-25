@@ -38,7 +38,10 @@
     </div>
 
     <div class="py-8">
-      <h3>WE UNDERSTAND</h3>
+      <h3 class="">
+        <span class="title-transparent-black">WE</span>
+        UNDERSTAND
+      </h3>
     </div>
 
     <div>

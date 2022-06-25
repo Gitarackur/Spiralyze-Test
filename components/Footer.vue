@@ -4,7 +4,10 @@
       <div class="lg:w-6/12 left-footer c-white px-4 md:px-6 lg:px-32 md:py-16">
         <div class="">
           <div class="py-12">
-            <h1><span>WATCH </span><span>THE VIDEO</span></h1>
+            <h1>
+              <span class="title-transparent">WATCH </span
+              ><span>THE VIDEO</span>
+            </h1>
           </div>
 
           <div class="">

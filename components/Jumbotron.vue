@@ -146,8 +146,11 @@
         </p>
       </div>
 
-      <div class="lg:flex lg:items-center lg:justify-end lg:w-6/12">
-        <div class="md:w-full lg:w-10/12 contactForm px-4 md:px-7">
+      <div class="lg:flex lg:items-center lg:justify-end lg:w-6/12 lg:pl-6">
+        <div
+          :key="contactFormKey"
+          class="md:w-full lg:w-10/12 contactForm px-4 md:px-7"
+        >
           <div class="pt-9 pb-14 md:py-12">
             <div class="py-0 md:pb-9 flex items-center justify-center">
               <h1 class="sub-heading-1">Contact Us</h1>
@@ -414,6 +417,7 @@ export default {
         country: null,
       },
       onSubmitError: false,
+      contactFormKey: 0,
       valiators: [],
     }
   },
@@ -464,13 +468,8 @@ export default {
         this.$router.push('/thankYou')
       } else {
         checkAll(this.form)
-        console.log(
-          'checkall',
-          this.form,
-          checkAll(this.form),
-          v.validate(this.form, schema)
-        )
         this.onSubmitError = true
+        this.contactFormKey += 1
       }
     },
     checkError(property) {

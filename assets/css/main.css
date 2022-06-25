@@ -132,4 +132,7 @@
 
 .navlinks.nuxt-link-active {
   color: #FFFFFF;
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
 }
