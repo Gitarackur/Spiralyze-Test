@@ -2,12 +2,11 @@
   <div class="px-4 md:px-6 lg:px-32 md:pt-16 md:pb-32">
     <div class="mt-20 mb-8 lg:mt-0 lg:mb-0 lg:py-8">
       <h3 class="title-2">
-        <span class="title-transparent-black">WE</span>&nbsp; CAN ORGANIZE
-        EVERYTHING
+        <span class="title-transparent-black">WE</span> CAN ORGANIZE EVERYTHING
       </h3>
     </div>
 
-    <div class="md:flex md:flex-wrap md:-mx-5 md:mb-14 lg:mb-0">
+    <div class="md:flex md:flex-wrap md:-mx-5 md:mb-14 lg:mb-7">
       <div class="md:w-full mb-8 lg:mb-0 lg:w-4/12 md:px-5">
         <div>
           <div class="">
@@ -49,7 +48,7 @@
       </div>
     </div>
 
-    <div class="md:py-9">
+    <div class="md:py-5">
       <div class="md:flex md:flex-wrap md:-mx-5 my-2 md:-my-5">
         <div
           v-for="(q, i) in cards"
@@ -57,7 +56,25 @@
           class="relative md:w-6/12 lg:w-4/12 py-2 md:px-5 md:py-5"
         >
           <div class="outline-card p-9">
-            <p class="big-p-18 text-center">{{ q.title }}</p>
+            <p class="big-p-18 text-center flex">
+              {{ q.title }}
+            </p>
+
+            <span class="">
+              &nbsp;
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.5 9C0.5 4.30814 4.30814 0.5 9 0.5C13.6919 0.5 17.5 4.30814 17.5 9C17.5 13.6919 13.6919 17.5 9 17.5C4.30814 17.5 0.5 13.6919 0.5 9Z"
+                  stroke="#5BC8AF"
+                />
+              </svg>
+            </span>
           </div>
 
           <div class="absolute flex items-center justify-center">
@@ -147,11 +164,20 @@ export default {
   transition: all 0.05s;
 }
 
+.outline-card span {
+  opacity: 0;
+}
+
 .outline-card:hover + div > .outline-card-details {
   opacity: 1;
 }
 
+.outline-card:hover span {
+  opacity: 1;
+}
+
 .p-italic {
+  font-family: 'Montserrat-Italic', sans-serif;
   font-style: italic;
   font-size: 18px;
   line-height: 28px;

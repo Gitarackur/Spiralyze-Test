@@ -1,10 +1,12 @@
 <template>
   <div class="">
     <div class="lg:flex lg:items-stretch bg-#194D44">
-      <div class="lg:w-6/12 left-footer c-white px-4 md:px-6 lg:px-32 md:py-16">
+      <div
+        class="relative lg:w-6/12 left-footer c-white px-4 md:px-6 lg:px-32 md:py-16"
+      >
         <div class="">
           <div class="py-12">
-            <h1>
+            <h1 class="title text-center lg:text-left">
               <span class="title-transparent">WATCH </span
               ><span>THE VIDEO</span>
             </h1>
@@ -33,7 +35,7 @@
 
               <div class="px-3">
                 <h3 class="sub-heading-2 mb-2">{{ data.title }}</h3>
-                <p>
+                <p class="footer-p">
                   {{ data.content }}
                 </p>
               </div>
@@ -208,6 +210,7 @@ export default {
   width: 100%;
   background: linear-gradient(180deg, #305d52 0%, #153f38 100%);
   color: #fff;
+  /* background-image: url(~~/static/images/footer-left-bg.svg); */
 }
 
 .right-footer {
@@ -222,5 +225,14 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.footer-p {
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.8);
 }
 </style>

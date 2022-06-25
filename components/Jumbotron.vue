@@ -306,7 +306,7 @@
       </div>
 
       <div
-        class="w-full absolute bottom-0 right-0 left-0"
+        class="w-full absolute -bottom-2 right-0 left-0"
         style="overflow: hidden"
       >
         <svg
@@ -329,7 +329,7 @@
       class="tablet hidden md:block lg:hidden absolute bottom-0 right-0 left-0"
     >
       <div
-        class="w-full absolute bottom-0 right-0 left-0"
+        class="w-full absolute -bottom-2 right-0 left-0"
         style="overflow: hidden"
       >
         <svg
@@ -348,7 +348,7 @@
       </div>
 
       <div
-        class="w-full absolute bottom-0 right-0 left-0"
+        class="w-full absolute -bottom-2 right-0 left-0"
         style="overflow: hidden"
       >
         <svg
@@ -571,7 +571,7 @@ export default {
 }
 
 .transform-svg-1 {
-  transform: translateY(20px);
+  transform: translateY(5px);
   fill: #ffffff;
 }
 </style>

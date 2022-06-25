@@ -50,6 +50,8 @@
     "jest": "^27.4.4",
     "postcss": "^8.4.4",
     "prettier": "^2.5.1",
+    "sass": "^1.53.0",
+    "sass-loader": "10",
     "vue-jest": "^3.0.4"
   }
 }
