@@ -1,0 +1,135 @@
+.task-input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  z-index: 300;
+}
+
+.task-select-field,
+.task-input-field {
+  /* color: rgba(255, 255, 255, 0.7); */
+  color: #FFFFFF;
+  border-width: 0;
+  z-index: 400;
+}
+
+.task-select-field {
+  appearance: none;
+}
+
+.task-select-field,
+.task-input-field:focus {
+  outline: 0;
+  box-shadow: 0;
+}
+.task-input-field::placeholder {
+  color: transparent;
+}
+
+/* Make the label and field look identical on every browser */
+.task-input-label,
+.task-select-field,
+.task-input-field {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+.task-input-field,
+.task-select-field,
+.task-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.task-select-field,
+.task-input-field {
+  padding: 14px 18px;
+  transition: border-color 0.25s ease-in-out;
+  background-color: transparent;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.task-select-field + .task-input-label,
+.task-input-field + .task-input-label {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  /* color: #FFFFFF; */
+  color: #FFFFFFB2;
+  transition: transform 0.25s, opacity 0.25s, padding 0.25s ease-in-out;
+  transform-origin: 0 0;
+}
+
+.task-input-field:focus + .task-input-label,
+.task-input-field:not(:placeholder-shown) + .task-input-label,
+.task-select-field:not([data-value=""]) + .task-input-label {
+  z-index: 1000;
+  padding: 0 1px;
+  transform: translate(0, -19px) scale(0.8);
+  color: #FFFFFFB2;
+  background: linear-gradient(180deg, #2A7D6C 0%, rgba(62, 105, 96, 0.62) 100%);
+}
+
+.task-select-field:focus,
+.task-input-field:focus {
+  border-color: #fff;
+}
+
+.task-input-field:focus + .task-input-label,
+.task-select-field:focus + .task-input-label {
+  color: #fff;
+  /* color: #3bd6b2; */
+}
+
+.task-input-field.error,
+.task-select-field.error {
+  border-color: #d63b3b !important;
+  color: #d63b3b !important;
+}
+
+.task-input-field.error + .task-input-label,
+.task-select-field.error + .task-input-label {
+  color: #d63b3b;
+}
+
+.task-input-field:-webkit-autofill,
+.task-input-field:-webkit-autofill:hover,
+.task-input-field:-webkit-autofill:focus {
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+.task-input-field[disabled] {
+    background: #eee;
+    opacity: 0.5;
+}
+
+
+
+
+
+/**************** links ****************/
+.navlinks {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 41px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navlinks.nuxt-link-active {
+  color: #FFFFFF;
+}
