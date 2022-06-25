@@ -11,7 +11,7 @@
           leave-active-class="animated slide-out-active"
         >
           <div v-for="(slide, i) in slides" :key="slide.idx">
-            <div v-if="i + 1 == active" class="">
+            <div v-if="i + 1 === active" class="">
               <div class="md:flex lg:items-stretch lg:justify-center">
                 <div
                   class="md:w-full md:flex md:items-stretch md:mx-4 md:h-full"
@@ -33,7 +33,6 @@
                     >
                       <div class="flex items-end justify-between mb-4">
                         <h3 class="sub-heading-2 md:mb-4">
-                          <!-- Abbie Harvey -->
                           {{ slide.name }}
                         </h3>
 
@@ -54,10 +53,6 @@
                       </div>
 
                       <p class="italic big-p-quote">
-                        <!-- I have been caring for my mom & dad off and on for about
-                        10 years now, and I know the importance of me being
-                        there for appointments. Older people need attention,
-                        love and care that they truly deserve. -->
                         {{ slide.content }}
                       </p>
                     </div>
@@ -148,18 +143,12 @@ export default {
     move(amount) {
       let newActive
       const newIndex = this.active + amount
-      if (newIndex > this.slides) newActive = 1
-      if (newIndex === 0) newActive = this.slides
+      if (newIndex > this.slides.length) newActive = 1
+      if (newIndex === 0) newActive = this.slides.length
       this.active = newActive || newIndex
     },
     jump(index) {
       this.active = index
-    },
-    addSlide() {
-      this.slides = this.slides + 1
-    },
-    removeSlide() {
-      this.slides = this.slides - 1
     },
   },
 }
