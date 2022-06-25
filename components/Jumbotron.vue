@@ -159,18 +159,18 @@
                   v-model="form.firstName"
                   name="FirstName"
                   label="First Name"
-                  :error="true"
+                  :error="checkErrorValue('firstName')"
                   :error-message="checkError('firstName')"
                 />
               </div>
 
               <div class="md:w-6/12 py-2 md:p-2">
                 <TaskInput
-                  v-model="form.email"
-                  name="LastName"
+                  v-model="form.lastName"
+                  name="lastName"
                   label="Last Name"
-                  :error="true"
-                  :error-message="checkError('email')"
+                  :error="checkErrorValue('lastName')"
+                  :error-message="checkError('lastName')"
                 />
               </div>
 
@@ -179,7 +179,7 @@
                   v-model="form.businessEmail"
                   name="BusinessEmail"
                   label="Business Email"
-                  :error="true"
+                  :error="checkErrorValue('businessEmail')"
                   :error-message="checkError('businessEmail')"
                 />
               </div>
@@ -189,7 +189,7 @@
                   v-model="form.company"
                   name="Company"
                   label="Company"
-                  :error="true"
+                  :error="checkErrorValue('company')"
                   :error-message="checkError('company')"
                 />
               </div>
@@ -198,10 +198,17 @@
                 <TaskSelect
                   v-model="form.country"
                   label="-Country-"
-                  :error="true"
+                  :error="checkErrorValue('country')"
                   :error-message="checkError('country')"
                 >
-                  <option value="dhdd">huga huga</option>
+                  <option value="dhdd">Select Country</option>
+                  <option
+                    v-for="(country, i) in ['USA', 'Nigeria']"
+                    :key="i"
+                    :value="country"
+                  >
+                    {{ country }}
+                  </option>
                 </TaskSelect>
               </div>
 
@@ -365,14 +372,34 @@ import TaskSelect from './modules/task-select.vue'
 const v = new Validator()
 
 const schema = {
-  firstName: { type: 'string', optional: false },
-  email: { type: 'string', optional: false },
-  businessEmail: { type: 'string', optional: false },
-  company: { type: 'string', optional: false },
-  country: { type: 'string', optional: false },
+  firstName: { type: 'string', min: 2, optional: false },
+  lastName: { type: 'string', min: 2, optional: false },
+  businessEmail: { type: 'email', optional: false },
+  company: { type: 'string', min: 2, optional: false },
+  country: { type: 'string', min: 2, optional: false },
+}
+const firstNameschema = {
+  firstName: { type: 'string', min: 2, optional: false },
+}
+const lastNameschema = {
+  lastName: { type: 'string', min: 2, optional: false },
+}
+const businessEmailSchema = {
+  businessEmail: { type: 'email', optional: false },
+}
+const companySchema = {
+  company: { type: 'string', min: 2, optional: false },
+}
+const countrySchema = {
+  country: { type: 'string', min: 2, optional: false },
 }
 
-const check = v.compile(schema)
+const check1 = v.compile(firstNameschema)
+const check2 = v.compile(lastNameschema)
+const check3 = v.compile(businessEmailSchema)
+const check4 = v.compile(companySchema)
+const check5 = v.compile(countrySchema)
+const checkAll = v.compile(schema)
 
 export default {
   name: 'JumbotronComponent',
@@ -381,80 +408,95 @@ export default {
     return {
       form: {
         firstName: null,
-        email: null,
+        lastName: null,
         businessEmail: null,
         company: null,
         country: null,
       },
-
-      validateResult: null,
+      onSubmitError: false,
       valiators: [],
     }
   },
   computed: {},
   watch: {
-    form: {
+    'form.firstName': {
       handler(val, oldVal) {
-        // console.log('yeahhhh', oldVal, val)
-        check(val)
-        this.validators = check(val)
-        console.log('check value watcher', check(val))
+        this.validators = check1({ firstName: val })
+      },
+      deep: true,
+    },
+    'form.lastName': {
+      handler(val, oldVal) {
+        this.validators = check2({ lastName: val })
+      },
+      deep: true,
+    },
+    'form.businessEmail': {
+      handler(val, oldVal) {
+        this.validators = check3({ businessEmail: val })
+      },
+      deep: true,
+    },
+    'form.company': {
+      handler(val, oldVal) {
+        this.validators = check4({ company: val })
+      },
+      deep: true,
+    },
+    'form.country': {
+      handler(val, oldVal) {
+        this.validators = check5({ country: val })
+      },
+      deep: true,
+    },
+    onSubmitError: {
+      handler(val, oldVal) {
+        if (val === true) {
+          this.validators = checkAll(this.form)
+        }
       },
       deep: true,
     },
   },
   methods: {
     validate() {
-      console.log(
-        'validate errors',
-        v.validate(
-          {
-            firstName: this.form.firstName,
-            email: this.form.email,
-            company: this.form.company,
-            businessEmail: this.form.businessEmail,
-            country: this.form.country,
-          },
-          schema
-        ),
-        'form value',
-        this.form
-      )
-
-      this.validateResult = v.validate(
-        {
-          firstName: this.firstName,
-          email: this.email,
-          company: this.company,
-          businessEmail: this.businessEmail,
-          country: this.country,
-        },
-        schema
-      )
+      if (typeof v.validate(this.form, schema) === 'boolean') {
+        this.$router.push('/thankYou')
+      } else {
+        checkAll(this.form)
+        console.log(
+          'checkall',
+          this.form,
+          checkAll(this.form),
+          v.validate(this.form, schema)
+        )
+        this.onSubmitError = true
+      }
     },
     checkError(property) {
-      console.log(
-        'huga higs',
-        this.valiators && this.valiators.length > 0
-          ? this.valiators.find((curr) => curr.field === property).message
-          : ''
-      )
-      return this.valiators && this.valiators.length > 0
-        ? this.valiators.find((curr) => curr.field === property).message
+      return this.validators &&
+        this.validators.length > 0 &&
+        this.validators.find((curr) => curr.field === property) &&
+        this.validators.find((curr) => curr.field === property).message
+        ? this.validators.find((curr) => curr.field === property).message
         : ''
+    },
+    checkErrorValue(property) {
+      return (
+        this.validators &&
+        this.validators.length > 0 &&
+        this.validators.some((curr) => curr.field === property)
+      )
     },
   },
 }
-
-// :error="v$.email.$error"
-// :error-message="v$.email.$errors[0]?.$message.toString()
 </script>
 
 <style scoped>
 @media (min-width: 992px) {
   .jumbotron {
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     background-image: linear-gradient(
         180deg,
         #194d41 0%,

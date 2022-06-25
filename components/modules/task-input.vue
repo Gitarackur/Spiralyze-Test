@@ -1,19 +1,23 @@
 <template>
-  <div class="task-input-wrapper">
-    <input
-      :type="type"
-      class="task-input-field"
-      :class="{ error: error }"
-      placeholder="_"
-      :value="value"
-      v-bind="$attrs"
-      @input="onChange"
-    />
-    <label class="task-input-label">{{ label }}</label>
-    <span v-if="errorMessage" class="text-xs" style="color: #d63b3b">
-      {{ errorMessage }}
-    </span>
-    <div v-if="prepend" class="prepend">{{ prepend }}</div>
+  <div class="relative">
+    <div class="task-input-wrapper">
+      <input
+        :type="type"
+        class="task-input-field"
+        :class="{ error: error }"
+        placeholder="_"
+        :value="value"
+        v-bind="$attrs"
+        @input="onChange"
+      />
+      <label class="task-input-label">{{ label }}</label>
+      <div v-if="prepend" class="prepend">{{ prepend }}</div>
+    </div>
+    <div class="absolute">
+      <span v-if="errorMessage" class="mt-3 text-xs tooltip px-4 py-3 w-full">
+        {{ errorMessage }}
+      </span>
+    </div>
   </div>
 </template>
 

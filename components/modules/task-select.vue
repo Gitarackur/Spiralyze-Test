@@ -8,7 +8,7 @@
         class="task-select-field"
         :class="{ error: error }"
         name=""
-        :value="modelValue"
+        :value="value"
         data-value=""
         @input="onChange"
         @change="onChange"
@@ -32,18 +32,9 @@
             fill="white"
           />
         </svg>
-
-        <!-- <svg viewBox="0 0 20 20" fill="none" stroke="currentColor">
-          <path
-            d="M7 7l3-3 3 3m0 6l-3 3-3-3"
-            stroke-width="1.1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg> -->
       </span>
     </div>
-    <span v-if="errorMessage" class="text-xs" style="color: #d63b3b">
+    <span v-if="errorMessage" class="mt-5 text-xs tooltip px-4 py-3 w-full">
       {{ errorMessage }}
     </span>
   </div>
@@ -53,21 +44,21 @@
 export default {
   name: 'TaskSelect',
   props: {
-    modelValue: {},
+    value: {},
     label: { type: String, default: '' },
     items: { type: Array, default: () => [{ text: '', value: '' }] },
     error: { type: Boolean },
     errorMessage: { type: String, default: '' },
   },
-  emits: ['update:modelValue'],
+  emits: ['input'],
   mounted() {
-    if (this.modelValue) {
-      this.$refs.el.setAttribute('data-value', this.modelValue)
+    if (this.value) {
+      this.$refs.el.setAttribute('data-value', this.value)
     }
   },
   methods: {
     onChange(e) {
-      this.$emit('update:modelValue', e.target.value)
+      this.$emit('input', e.target.value)
       e.target.setAttribute('data-value', e.target.value)
     },
   },
