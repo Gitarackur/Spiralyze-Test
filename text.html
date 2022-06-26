@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  .flex {
+    display: flex;
+  }
+
+  .justify-end {
+    justify-content: end;
+  }
+  .relative {
+    position: relative;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .bg-red {
+    background-color: red;
+  }
+
+  .bg-blue {
+    background-color: blue;
+  }
+  .w-1\/2 {
+    width: 50%;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .order-1 {
+    order: 1;
+  }
+
+  .order-2 {
+    order: 2;
+  }
+
+  .object-fit {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bg-svg {
+    background-image: url(./static/images/Rectangle.png);
+    background-size: 100% 100%;
+    background-repeat: round;
+  }
+</style>
+<body>
+  <div class="flex justify-end">
+    <div class="bg-blue w-1/2 order-2">
+
+    </div>
+    <div class="bg-red w-1/2 order-1">
+      <div class="bg-svg" style="height: 500px; overflow-y: hidden; width: 120%; transform: translateX(0);">
+        BA
+      </div>
+    </div>
+  </div>
+</body>
+</html>

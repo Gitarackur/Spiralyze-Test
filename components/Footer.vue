@@ -1,72 +1,11 @@
 <template>
   <div class="">
-    <div class="lg:flex lg:items-stretch bg-#194D44">
+    <div
+      class="flex flex-col-reverse lg:flex-row lg:flex lg:items-stretch bg-#194D44"
+    >
       <div
-        class="relative lg:w-6/12 left-footer c-white px-4 md:px-6 lg:px-32 py-20 md:py-16"
+        class="lg:w-6/12 order-1 lg:order-2 right-footer p-20 md:p-20 lg:p-0 relative"
       >
-        <div class="">
-          <div class="lg:py-12">
-            <h1 class="title-footer text-center lg:text-left">
-              <span class="title-transparent-footer">WATCH </span
-              ><span>THE VIDEO</span>
-            </h1>
-          </div>
-
-          <div class="">
-            <div
-              v-for="(data, i) in footerItems"
-              :key="i"
-              class="flex items-stretch -mx-3 py-4"
-            >
-              <div class="px-3">
-                <svg
-                  width="18"
-                  height="14"
-                  viewBox="0 0 18 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.6 10.6L1.4 6.4L0 7.8L5.6 13.4L17.6 1.4L16.2 0L5.6 10.6Z"
-                    fill="#5BC8AF"
-                  />
-                </svg>
-              </div>
-
-              <div class="px-3">
-                <h3 class="sub-heading-2 mb-2">{{ data.title }}</h3>
-                <p class="footer-p">
-                  {{ data.content }}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="absolute bottom-0">
-          <svg
-            width="360"
-            height="280"
-            viewBox="0 0 360 280"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g style="mix-blend-mode: color">
-              <rect
-                x="-2.88379"
-                y="-12.9631"
-                width="362.884"
-                height="305.926"
-                rx="4"
-                fill="#194D44"
-                fill-opacity="0.3"
-              />
-            </g>
-          </svg>
-        </div>
-      </div>
-
-      <div class="lg:w-6/12 right-footer p-20 md:p-20 lg:p-0 relative">
         <div
           class="absolute bottom-0 lg:right-0 lg:pr-9 lg:pb-9 flex items-center justify-center py-9 lg:py-0"
         >
@@ -157,7 +96,7 @@
 
         <div class="h-full w-full relative lg:static">
           <div
-            class="w-full h-full absolute lg:static -mt-44 md:-mt-64 lg:mt-0"
+            class="w-full h-full absolute z-10 lg:static -mt-48 md:-mt-64 lg:mt-0"
           >
             <div class="flex items-center justify-center w-full h-full md:pt-1">
               <div class="h-full flex items-center justify-center">
@@ -187,6 +126,47 @@
                     </div>
                   </div>
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative order-2 lg:order-1 lg:w-6/12 left-footer c-white">
+        <div class="bg-in px-4 py-32 md:px-6 md:py-32 lg:px-32 md:py-16">
+          <div class="lg:py-12">
+            <h1 class="title-footer text-center lg:text-left">
+              <span class="title-transparent-footer">WATCH </span
+              ><span>THE VIDEO</span>
+            </h1>
+          </div>
+
+          <div class="">
+            <div
+              v-for="(data, i) in footerItems"
+              :key="i"
+              class="flex items-stretch -mx-3 py-4"
+            >
+              <div class="px-3">
+                <svg
+                  width="18"
+                  height="14"
+                  viewBox="0 0 18 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.6 10.6L1.4 6.4L0 7.8L5.6 13.4L17.6 1.4L16.2 0L5.6 10.6Z"
+                    fill="#5BC8AF"
+                  />
+                </svg>
+              </div>
+
+              <div class="px-3">
+                <h3 class="sub-heading-2 mb-2">{{ data.title }}</h3>
+                <p class="footer-p">
+                  {{ data.content }}
+                </p>
               </div>
             </div>
           </div>
@@ -268,9 +248,49 @@ export default {
 
 .left-footer {
   width: 100%;
-  background: linear-gradient(180deg, #305d52 0%, #153f38 100%);
+  /* background: linear-gradient(180deg, #305d52 0%, #153f38 100%); */
+  background-repeat: no-repeat;
+  /* background-image: url(./static/images/Rectangle.png);
+  background-repeat: round;
+  background-size: 100% 100%;
   color: #fff;
+  overflow-y: hidden;
+  transform: translateX(0); */
   /* background-image: url(~~/static/images/footer-left-bg.svg); */
+}
+
+.bg-in {
+  background-image: url(./static/images/Rectangle.png);
+  background-repeat: round;
+  background-size: 100% 100%;
+  color: #fff;
+  width: 110%;
+  overflow-y: hidden;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .bg-in {
+    background-image: url(./static/images/Rectangle-tablet.png);
+    background-repeat: round;
+    background-size: 100% 100%;
+    color: #fff;
+    width: 100%;
+    overflow-y: hidden;
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .bg-in {
+    background-image: url(./static/images/Rectangle-mob.png);
+    background-repeat: round;
+    background-size: 100% 100%;
+    color: #fff;
+    width: 100%;
+    overflow-y: hidden;
+    transform: translateX(0);
+  }
 }
 
 .right-footer {

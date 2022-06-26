@@ -342,7 +342,7 @@ export default {
   methods: {
     validate() {
       if (typeof v.validate(this.form, schema) === 'boolean') {
-        this.$router.push('/thankYou')
+        this.$router.push('/thank-you')
       } else {
         checkAll(this.form)
         this.onSubmitError = true
