@@ -66,72 +66,30 @@
         </div>
       </div>
 
-      <div class="lg:w-6/12 right-footer">
+      <div class="lg:w-6/12 right-footer p-20 md:p-20 lg:p-0">
         <div class="h-full w-full">
           <div class="w-full h-full">
             <div class="flex items-center justify-center w-full h-full md:pt-1">
               <div class="h-full flex items-center justify-center">
-                <div class="hidden lg:block lg:relative cursor-pointer">
-                  <div class="relative">
-                    <div class="lg:absolute position-center">
-                      <svg
-                        width="208"
-                        height="208"
-                        viewBox="0 0 208 208"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="104"
-                          cy="104"
-                          r="104"
-                          fill="#5BC8AF"
-                          fill-opacity="0.1"
-                        />
-                        <circle
-                          cx="104"
-                          cy="104"
-                          r="103"
-                          stroke="white"
-                          stroke-opacity="0.3"
-                          stroke-width="2"
-                        />
-                      </svg>
-                    </div>
-
-                    <div class="lg:absolute position-center">
-                      <svg
-                        width="122"
-                        height="122"
-                        viewBox="0 0 122 122"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="61"
-                          cy="61"
-                          r="59.2692"
-                          fill="#5BC8AF"
-                          fill-opacity="0.8"
-                          stroke="white"
-                          stroke-width="2"
-                        />
-                      </svg>
-                    </div>
-
-                    <div class="lg:absolute position-center">
-                      <svg
-                        width="31"
-                        height="36"
-                        viewBox="0 0 31 36"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M29.1234 15.1493C31.2086 16.3532 31.2086 19.3629 29.1234 20.5668L4.78475 34.6187C2.69953 35.8226 0.0930175 34.3177 0.0930176 31.9099L0.0930188 3.80613C0.0930189 1.39833 2.69954 -0.106538 4.78475 1.09736L29.1234 15.1493Z"
-                          fill="white"
-                        />
-                      </svg>
+                <div class="cursor-pointer">
+                  <div class="">
+                    <div
+                      class="overlay-circle flex items-center justify-center"
+                    >
+                      <div class="video-play flex items-center justify-center">
+                        <svg
+                          width="40"
+                          height="45"
+                          viewBox="0 0 40 45"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M37.6192 19.3543C40.2859 20.8939 40.2859 24.7429 37.6192 26.2825L6.4939 44.2528C3.82723 45.7924 0.493896 43.8679 0.493896 40.7887L0.493898 4.84819C0.493898 1.76899 3.82723 -0.155511 6.4939 1.38409L37.6192 19.3543Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -214,5 +172,58 @@ export default {
   font-size: 18px;
   line-height: 28px;
   color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 992px) {
+  .video-play {
+    width: 154.15px;
+    height: 154.15px;
+    background: rgba(91, 200, 175, 0.8);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+  }
+
+  .overlay-circle {
+    width: 228px;
+    height: 228px;
+    background: rgba(91, 200, 175, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.44);
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-play {
+    width: 98.66px;
+    height: 98.66px;
+    background: rgba(91, 200, 175, 0.8);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+  }
+
+  .overlay-circle {
+    width: 128px;
+    height: 128px;
+    background: rgba(91, 200, 175, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.44);
+    border-radius: 50%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .video-play {
+    width: 154.15px;
+    height: 154.15px;
+    background: rgba(91, 200, 175, 0.8);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+  }
+
+  .overlay-circle {
+    width: 200px;
+    height: 200px;
+    background: rgba(91, 200, 175, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.44);
+    border-radius: 50%;
+  }
 }
 </style>

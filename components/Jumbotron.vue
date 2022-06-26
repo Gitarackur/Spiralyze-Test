@@ -566,7 +566,7 @@ export default {
 }
 
 .transform-svg {
-  transform: translateY(5px);
+  transform: translateY(10px);
   fill: #ffffff;
 }
 

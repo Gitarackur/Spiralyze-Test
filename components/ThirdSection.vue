@@ -60,8 +60,7 @@
               {{ q.title }}
             </p>
 
-            <span class="">
-              &nbsp;
+            <div class="ml-2">
               <svg
                 width="18"
                 height="18"
@@ -74,7 +73,7 @@
                   stroke="#5BC8AF"
                 />
               </svg>
-            </span>
+            </div>
           </div>
 
           <div class="absolute flex items-center justify-center">
@@ -164,15 +163,17 @@ export default {
   transition: all 0.05s;
 }
 
-.outline-card span {
+.outline-card div {
   opacity: 0;
 }
 
 .outline-card:hover + div > .outline-card-details {
   opacity: 1;
 }
-
-.outline-card:hover span {
+.outline-card:hover p {
+  color: #5bc8af;
+}
+.outline-card:hover div {
   opacity: 1;
 }
 
