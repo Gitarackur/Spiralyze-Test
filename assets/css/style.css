@@ -148,6 +148,14 @@ h6 {
   line-height: 72px;
 }
 
+.title-footer{
+  font-family: 'Montserrat-ExtraBold', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 52px;
+}
+
 .title-2 {
   font-family: 'Montserrat-ExtraBold', sans-serif;
   font-style: normal;
@@ -157,6 +165,18 @@ h6 {
 }
 
 .title-transparent{
+  color: #fff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  color: transparent;
+}
+
+.title-transparent-footer {
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 52px;
   color: #fff;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
@@ -188,6 +208,15 @@ h6 {
     line-height: 36px;
   }
 
+
+  .title-footer, .title-transparent-footer {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+  }
+
   .title-transparent, .title-transparent-black {
     font-family: 'Montserrat-Bold', sans-serif;
     font-style: normal;
@@ -211,6 +240,14 @@ h6 {
     font-weight: 700;
     font-size: 36px;
     line-height: 44px;
+  }
+
+  .title-transparent-footer, .title-footer {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 52px;
   }
 }
 
@@ -485,6 +522,22 @@ h6 {
   border-radius: 4px;
 }
 
+.btn:hover{
+  background: #5BC8AF;
+  box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.btn-outline{
+  border: 2px solid #5BC8AF;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.08));
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #5BC8AF;
+}
 
 /***** tooltip *****/
 .tooltip {

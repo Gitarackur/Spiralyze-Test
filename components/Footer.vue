@@ -2,12 +2,12 @@
   <div class="">
     <div class="lg:flex lg:items-stretch bg-#194D44">
       <div
-        class="relative lg:w-6/12 left-footer c-white px-4 md:px-6 lg:px-32 md:py-16"
+        class="relative lg:w-6/12 left-footer c-white px-4 md:px-6 lg:px-32 py-20 md:py-16"
       >
         <div class="">
-          <div class="py-12">
-            <h1 class="title text-center lg:text-left">
-              <span class="title-transparent">WATCH </span
+          <div class="lg:py-12">
+            <h1 class="title-footer text-center lg:text-left">
+              <span class="title-transparent-footer">WATCH </span
               ><span>THE VIDEO</span>
             </h1>
           </div>
@@ -71,7 +71,7 @@
           <div class="w-full h-full">
             <div class="flex items-center justify-center w-full h-full md:pt-1">
               <div class="h-full flex items-center justify-center">
-                <div class="cursor-pointer">
+                <div class="play-video cursor-pointer">
                   <div class="">
                     <div
                       class="overlay-circle flex items-center justify-center"
@@ -225,5 +225,9 @@ export default {
     border: 2px solid rgba(255, 255, 255, 0.44);
     border-radius: 50%;
   }
+}
+
+.play-video:hover {
+  transform: scale(1.2);
 }
 </style>
