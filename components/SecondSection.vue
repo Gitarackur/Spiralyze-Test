@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 md:px-6 lg:px-32 md:py-16">
+  <div class="mt-16 lg:-mt-28 px-4 md:px-6 lg:px-32 md:py-16">
     <div class="relative">
       <div class="slides">
         <transition-group
@@ -17,26 +17,30 @@
                   class="md:w-full md:flex md:items-stretch md:mx-4 md:h-full"
                 >
                   <div
-                    class="md:flex lg:justify-end md:w-4/12 md:px-4 md:h-full"
+                    class="relative md:static md:flex lg:justify-end md:w-4/12 md:px-4 md:h-full"
                   >
-                    <div class="md:w-full lg:w-10/12">
+                    <div
+                      class="absolute left-10 -top-10 md:static left-0 right-0 md:static md:w-full lg:w-10/12"
+                    >
                       <img
                         :src="slide.image"
-                        class="w-full md:w-full md:h-full border-8px"
+                        class="w-44 h-44 md:w-full md:h-full border-8px"
                       />
                     </div>
                   </div>
 
                   <div class="md:w-8/12 md:px-4 md:h-full">
                     <div
-                      class="lg:w-11/12 px-8 lg:px-16 py-16 md:py-14 bg-#194D44 c-white"
+                      class="w-full lg:w-11/12 px-8 lg:px-16 py-16 md:py-14 bg-#194D44 c-white"
                     >
-                      <div class="flex items-end justify-between mb-4">
+                      <div
+                        class="relative md:static mt-32 md:mt-0 flex items-end justify-between mb-4"
+                      >
                         <h3 class="sub-heading-2 md:mb-4">
                           {{ slide.name }}
                         </h3>
 
-                        <div>
+                        <div class="absolute -top-28 right-0 md:static">
                           <svg
                             width="60"
                             height="47"
@@ -170,6 +174,13 @@ $primary: #5bc8af;
 }
 
 /* slideshow */
+@media (max-width: 700px) {
+  .prev,
+  .next {
+    position: static;
+    display: none;
+  }
+}
 
 .prev,
 .next {

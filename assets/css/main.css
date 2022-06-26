@@ -128,6 +128,14 @@
   font-size: 14px;
   line-height: 41px;
   color: rgba(255, 255, 255, 0.7);
+  transition: all, 0.2s
+}
+
+.navlinks:hover {
+  color: #FFFFFF;
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .navlinks.nuxt-link-active {

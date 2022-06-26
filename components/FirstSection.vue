@@ -43,7 +43,7 @@
       </h3>
     </div>
 
-    <div>
+    <div class="py-16 md:py-0">
       <div class="md:flex md:flex-wrap md:-mx-5">
         <div class="md:w-6/12 lg:w-4/12 md:px-5">
           <div>

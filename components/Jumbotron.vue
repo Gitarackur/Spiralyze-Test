@@ -119,11 +119,11 @@
         </div>
 
         <div class="px-4">
-          <nuxt-link class="navlinks" to="/1">ABOUT</nuxt-link>
+          <nuxt-link class="navlinks" to="/">ABOUT</nuxt-link>
         </div>
 
         <div class="px-4">
-          <nuxt-link class="navlinks" to="/2">CONTACT</nuxt-link>
+          <nuxt-link class="navlinks" to="/">CONTACT</nuxt-link>
         </div>
 
         <div class="px-4 navlinks">|</div>
@@ -154,7 +154,7 @@
           class="md:w-full lg:w-10/12 contactForm px-4 md:px-7"
         >
           <div class="pt-9 pb-14 md:py-12">
-            <div class="py-0 md:pb-9 flex items-center justify-center">
+            <div class="pb-9 md:pb-9 flex items-center justify-center">
               <h1 class="sub-heading-1">Contact Us</h1>
             </div>
 
