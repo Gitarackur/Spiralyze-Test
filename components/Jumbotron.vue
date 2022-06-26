@@ -119,11 +119,11 @@
         </div>
 
         <div class="px-4">
-          <nuxt-link class="navlinks" to="/">ABOUT</nuxt-link>
+          <nuxt-link class="navlinks" to="/r">ABOUT</nuxt-link>
         </div>
 
         <div class="px-4">
-          <nuxt-link class="navlinks" to="/">CONTACT</nuxt-link>
+          <nuxt-link class="navlinks" to="/t">CONTACT</nuxt-link>
         </div>
 
         <div class="px-4 navlinks">|</div>
@@ -208,7 +208,7 @@
                 >
                   <option value="dhdd">Select Country</option>
                   <option
-                    v-for="(country, i) in ['USA', 'Nigeria']"
+                    v-for="(country, i) in countries"
                     :key="i"
                     :value="country"
                   >
@@ -371,6 +371,7 @@
 
 <script>
 import Validator from 'fastest-validator'
+import countries from '../countries'
 import TaskInput from './modules/task-input.vue'
 import TaskSelect from './modules/task-select.vue'
 
@@ -421,6 +422,7 @@ export default {
       onSubmitError: false,
       contactFormKey: 0,
       valiators: [],
+      countries,
     }
   },
   computed: {},

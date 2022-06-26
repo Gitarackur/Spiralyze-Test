@@ -188,4 +188,8 @@ export default {
 .font-800 {
   font-weight: 800;
 }
+
+.title-2 span {
+  background: #fff;
+}
 </style>

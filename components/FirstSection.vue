@@ -169,4 +169,8 @@ export default {
 .border-8px {
   border-radius: 8px;
 }
+
+.title-2 span {
+  background: #f5f5f5;
+}
 </style>
