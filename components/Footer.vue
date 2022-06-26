@@ -96,7 +96,7 @@
 
         <div class="h-full w-full relative lg:static">
           <div
-            class="w-full h-full absolute z-10 lg:static -mt-48 md:-mt-64 lg:mt-0"
+            class="w-full h-full absolute z-10 lg:static -mt-48 md:-mt-72 lg:mt-0"
           >
             <div class="flex items-center justify-center w-full h-full md:pt-1">
               <div class="h-full flex items-center justify-center">
