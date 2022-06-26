@@ -157,11 +157,15 @@
 
         <div class="h-full w-full relative lg:static">
           <div
-            class="w-full h-full absolute lg:static -mt-52 md:-mt-64 lg:mt-0"
+            class="w-full h-full absolute lg:static -mt-44 md:-mt-64 lg:mt-0"
           >
             <div class="flex items-center justify-center w-full h-full md:pt-1">
               <div class="h-full flex items-center justify-center">
-                <div class="play-video cursor-pointer">
+                <a
+                  href="https://www.youtube.com/watch?v=ziCNMbQbT1I"
+                  target="blank"
+                  class="block play-video cursor-pointer"
+                >
                   <div class="">
                     <div
                       class="overlay-circle flex items-center justify-center"
@@ -182,7 +186,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -368,5 +372,10 @@ export default {
   line-height: 24px;
   text-align: right;
   color: #757575;
+}
+
+.footer-navlinks:hover {
+  font-weight: bold;
+  text-decoration: underline;
 }
 </style>

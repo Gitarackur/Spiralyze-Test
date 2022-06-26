@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <div class="navbar md:flex md:items-center px-4 md:px-6 lg:px-32 md:pt-5">
+  <div class="relative">
+    <div
+      class="navbar md:flex md:items-center px-4 md:px-6 lg:px-32 md:pt-5"
+      :class="showNavbar || showMobDropdown ? 'bg-nav py-5' : 'relative'"
+    >
       <div
         class="md:w-6/12 flex justify-between items-center md:block py-3 md:py-0"
       >
@@ -96,6 +99,7 @@
             viewBox="0 0 20 12"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            @click="toggleMobDropdown"
           >
             <path
               d="M0 0H19C19.5523 0 20 0.447715 20 1C20 1.55228 19.5523 2 19 2H0V0Z"
@@ -113,20 +117,27 @@
         </div>
       </div>
 
-      <div class="hidden md:flex md:w-6/12 items-center -mx-4">
-        <div class="px-4">
+      <div
+        class="md:flex md:w-6/12 md:items-center -mx-4 md:-mx-4"
+        :class="
+          showMobDropdown
+            ? 'bg-nav px-4 md:static md:z-0 w-full block'
+            : 'hidden'
+        "
+      >
+        <div class="px-4 md:px-4">
           <nuxt-link class="navlinks" to="/">HOME</nuxt-link>
         </div>
 
-        <div class="px-4">
+        <div class="px-4 md:px-4">
           <nuxt-link class="navlinks" to="/r">ABOUT</nuxt-link>
         </div>
 
-        <div class="px-4">
+        <div class="px-4 md:px-4">
           <nuxt-link class="navlinks" to="/t">CONTACT</nuxt-link>
         </div>
 
-        <div class="px-4 navlinks">|</div>
+        <div class="hidden md:block px-4 md:px-4 navlinks">|</div>
       </div>
     </div>
   </div>
@@ -135,7 +146,53 @@
 <script>
 export default {
   name: 'NavBar',
+  data() {
+    return {
+      showMobDropdown: false,
+      showNavbar: false,
+      lastScrollPosition: 0,
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.closeMobDropdown()
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy() {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    toggleMobDropdown() {
+      this.showMobDropdown = !this.showMobDropdown
+    },
+    closeMobDropdown() {
+      this.showMobDropdown = false
+    },
+    onScroll() {
+      const navBar = document.querySelector('.navbar')
+      if (window.pageYOffset > navBar.offsetTop) {
+        this.showNavbar = true
+      } else {
+        this.showNavbar = false
+      }
+    },
+  },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.bg-000 {
+  background: #000;
+}
+
+.bg-nav {
+  background: linear-gradient(180deg, #194d41 0%, rgba(25, 77, 65, 0.7) 100%);
+  position: sticky !important;
+  z-index: 100000000 !important;
+  left: 0;
+  right: 0;
+}
+</style>

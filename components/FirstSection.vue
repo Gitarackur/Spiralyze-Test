@@ -45,20 +45,7 @@
 
     <div class="py-16 md:py-0">
       <div class="md:flex md:flex-wrap md:-mx-5">
-        <div class="md:w-6/12 lg:w-4/12 md:px-5">
-          <div>
-            <div>
-              <p>
-                I have been caring for my mom & dad off and on for about 10
-                years now, and I know the importance of me being there for
-                appointments. Older people need attention, love and care that
-                they truly deserve.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="md:w-6/12 lg:w-4/12 md:px-5">
+        <div class="md:w-6/12 lg:w-4/12 pb-5 md:py-0 md:px-5">
           <div>
             <div>
               <p>
@@ -73,7 +60,22 @@
           </div>
         </div>
 
-        <div class="md:w-6/12 lg:w-4/12 md:px-5">
+        <div class="md:w-6/12 lg:w-4/12 pb-5 md:py-0 md:px-5">
+          <div>
+            <div>
+              <p>
+                Older adults want to play active and meaningful roles in their
+                lives, including as part of a social network, a neighborhood,
+                and a community. Service providers and policymakers must
+                consider that a lack of sense of purpose can become problematic
+                as people age. Engaging them in leisure activities and volunteer
+                work is important.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:w-6/12 lg:w-4/12 pb-5 md:py-0 md:px-5">
           <div>
             <div>
               <p>
@@ -112,7 +114,7 @@
           </div>
         </div>
 
-        <div class="block lg:hidden md:w-6/12 lg:w-4/12 md:px-5">
+        <div class="block lg:hidden md:w-6/12 lg:w-4/12 md:py-0 md:px-5">
           <div class="mt-6 mb-20 md:mt-2 md:mb-0">
             <button
               class="w-full flex items-center justify-center px-16 py-5 btn-outline inline-block -mx-1"

@@ -6,8 +6,8 @@
       </h3>
     </div>
 
-    <div class="md:flex md:flex-wrap md:-mx-5 md:mb-14 lg:mb-7">
-      <div class="md:w-full mb-8 lg:mb-0 lg:w-4/12 md:px-5">
+    <div class="md:flex md:flex-wrap md:-mx-5 md:mb-14 lg:mb-7 -my-5 md:my-0">
+      <div class="md:w-full mb-8 lg:mb-0 lg:w-4/12 py-5 md:py-0 md:px-5">
         <div>
           <div class="">
             <p class="p-italic">
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="md:w-6/12 lg:w-4/12 md:px-5">
+      <div class="md:w-6/12 lg:w-4/12 py-5 md:py-0 md:px-5">
         <div>
           <div>
             <p class="">
@@ -33,7 +33,7 @@
         </div>
       </div>
 
-      <div class="md:w-6/12 lg:w-4/12 md:px-5">
+      <div class="md:w-6/12 lg:w-4/12 py-5 md:py-0 md:px-5">
         <div>
           <div>
             <p>
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="md:py-5">
+    <div class="pt-14 pb-20 md:py-5">
       <div class="md:flex md:flex-wrap md:-mx-5 my-2 md:-my-5">
         <div
           v-for="(q, i) in cards"
